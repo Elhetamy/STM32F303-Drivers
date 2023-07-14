@@ -36,6 +36,15 @@ typedef enum
 
 typedef enum
 {
+	EXTI_PORTA,
+	EXTI_PORTB,
+	EXTI_PORTC,
+	EXTI_PORTD,
+	EXTI_PORTF
+}EXT_INT_port;
+
+typedef enum
+{
 	EXTI_0_Index,
 	EXTI_1_Index,
 	EXTI_2_Index,
@@ -53,5 +62,10 @@ typedef enum
 	EXTI_14_Index,
 	EXTI_15_Index
 }EXTI_Index;
+
+void EXTI_voidEnable(EXTI_Index Copy_u8ID,uint8 Copy_u8Port);
+void EXTI_voidSenseCtrl(Trigger_Source Copy_u8Trigger,EXTI_Index Copy_u8ID);
+void EXTI_voidSWInterrupt(EXTI_Index Copy_u8EXTISource);
+void EXTI_voidSetCallBackFunc(EXTI_Index Copy_u8EXTISource,void (*Copy_pvFunc)(void));
 
 #endif /* EXTI_INTERFACE_H_ */

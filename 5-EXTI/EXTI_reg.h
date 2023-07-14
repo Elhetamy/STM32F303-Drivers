@@ -24,6 +24,14 @@
 #define EXTI_SWIER2					*((volatile uint32 *)(EXTI_BaseAddress+0x30))
 #define EXTI_PR2					*((volatile uint32 *)(EXTI_BaseAddress+0x34))
 
+#ifndef		SYSCFG_EXTICR1
+#define		AFIO_BASE_ADD	     	(0x40010000)
+#define		SYSCFG_EXTICR1			*((volatile uint32 *)(AFIO_BASE_ADD+0x08))
+#define		SYSCFG_EXTICR2			*((volatile uint32 *)(AFIO_BASE_ADD+0x0C))
+#define		SYSCFG_EXTICR3			*((volatile uint32 *)(AFIO_BASE_ADD+0x10))
+#define		SYSCFG_EXTICR4			*((volatile uint32 *)(AFIO_BASE_ADD+0x14))
+#endif
+
 
 
 #endif /* EXTI_REG_H_ */
