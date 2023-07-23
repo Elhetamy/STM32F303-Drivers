@@ -64,6 +64,7 @@ typedef enum
 }EXTI_Index;
 
 void EXTI_voidEnable(EXTI_Index Copy_u8ID,uint8 Copy_u8Port);
+void EXTI_voidDisable(EXTI_Index Copy_u8ID,uint8 Copy_u8Port);
 void EXTI_voidSenseCtrl(Trigger_Source Copy_u8Trigger,EXTI_Index Copy_u8ID);
 void EXTI_voidSWInterrupt(EXTI_Index Copy_u8EXTISource);
 void EXTI_voidSetCallBackFunc(EXTI_Index Copy_u8EXTISource,void (*Copy_pvFunc)(void));

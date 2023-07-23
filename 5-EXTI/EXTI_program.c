@@ -277,6 +277,22 @@ void EXTI_voidEnable(EXTI_Index Copy_u8ID,uint8 Copy_u8Port)
 
 }
 
+void EXTI_voidDisable(EXTI_Index Copy_u8ID,uint8 Copy_u8Port)
+{
+	if(Copy_u8ID < 31)
+	{
+		CLR_BIT(EXTI_IMR1,Copy_u8ID);
+		//SET_BIT(EXTI_EMR1,Copy_u8ID);
+
+	}
+	else if(Copy_u8ID < 64)
+	{
+		Copy_u8ID -= 32;
+		CLR_BIT(EXTI_IMR2,Copy_u8ID);
+		//SET_BIT(EXTI_EMR2,Copy_u8ID);
+	}
+}
+
 void EXTI_voidSenseCtrl(Trigger_Source Copy_u8Trigger,EXTI_Index Copy_u8ID)
 {
 	if(!(Copy_u8ID < 23 && Copy_u8ID > 28))
