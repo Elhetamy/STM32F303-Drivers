@@ -14,10 +14,10 @@
 
 #define PLL_MULTIPLY	Mul_by2
 
-#define AHB_PRESCALER	Divided_by_2		//Options 1-Divided_by_2 2-Divided_by_4 3-Divided_by_8 4-Divided_by_16 5-Divided_by_64 6-Divided_by_128 7-Divided_by_256 8-Divided_by_512
+#define AHB_PRESCALER	NOT_DIVIDED		//Options 1-Divided_by_2 2-Divided_by_4 3-Divided_by_8 4-Divided_by_16 5-Divided_by_64 6-Divided_by_128 7-Divided_by_256 8-Divided_by_512
 
-#define APB1_PRESCALER	Divided_by_2		//Options 1-Divided_by_2 2-Divided_by_4 3-Divided_by_8 4-Divided_by_16
+#define APB1_PRESCALER	NOT_DIVIDED		//Options 1-Divided_by_2 2-Divided_by_4 3-Divided_by_8 4-Divided_by_16
 
-#define APB2_PRESCALER	Divided_by_2		//Options 1-Divided_by_2 2-Divided_by_4 3-Divided_by_8 4-Divided_by_16
+#define APB2_PRESCALER	NOT_DIVIDED		//Options 1-Divided_by_2 2-Divided_by_4 3-Divided_by_8 4-Divided_by_16
 
 #endif

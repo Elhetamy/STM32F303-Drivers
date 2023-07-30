@@ -20,7 +20,12 @@ void RCC_voidSysClkInt(void)
 {
 
 	/*Configure AHB Prescaler*/
-#if AHB_PRESCALER == Divided_by_2
+#if AHB_PRESCALER == NOT_DIVIDED
+	CLR_BIT(RCC_CFGR,HPRE0);
+	CLR_BIT(RCC_CFGR,HPRE1);
+	CLR_BIT(RCC_CFGR,HPRE2);
+	CLR_BIT(RCC_CFGR,HPRE3);
+#elif AHB_PRESCALER == Divided_by_2
 	CLR_BIT(RCC_CFGR,HPRE0);
 	CLR_BIT(RCC_CFGR,HPRE1);
 	CLR_BIT(RCC_CFGR,HPRE2);
@@ -66,7 +71,9 @@ void RCC_voidSysClkInt(void)
 	/**
 	 * Setup APB1 Configuration
 	 */
-#if APB1_PRESCALER == Divided_by_2
+#if APB1_PRESCALER == NOT_DIVIDED
+	CLR_BIT(RCC_CFGR,PPRE1_2);
+#elif APB1_PRESCALER == Divided_by_2
 	CLR_BIT(RCC_CFGR,PPRE1_0);
 	CLR_BIT(RCC_CFGR,PPRE1_1);
 	SET_BIT(RCC_CFGR,PPRE1_2);
@@ -88,7 +95,9 @@ void RCC_voidSysClkInt(void)
 	/**
 	 * Setup APB2 Configuration
 	 */
-#if APB2_PRESCALER == Divided_by_2
+#if APB2_PRESCALER == NOT_DIVIDED
+	CLR_BIT(RCC_CFGR,PPRE2_2);
+#elif APB2_PRESCALER == Divided_by_2
 	CLR_BIT(RCC_CFGR,PPRE2_0);
 	CLR_BIT(RCC_CFGR,PPRE2_1);
 	SET_BIT(RCC_CFGR,PPRE2_2);
@@ -147,11 +156,11 @@ void RCC_voidSysClkInt(void)
 #endif
 
 	RCC_CFGR &= PULL_MULTIPLAY_MASKING
-	RCC_CFGR |= PLL_MULTIPLY
+			RCC_CFGR |= PLL_MULTIPLY
 
 
-	/*Turn the HSE ON and looping till ready flag is raised*/
-	SET_BIT(RCC_CR,PLL_ON);
+			/*Turn the HSE ON and looping till ready flag is raised*/
+			SET_BIT(RCC_CR,PLL_ON);
 	while(GET_BIT(RCC_CR,PLL_RDY) == 0);
 
 #endif

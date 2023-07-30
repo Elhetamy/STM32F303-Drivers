@@ -190,6 +190,7 @@ typedef enum
 
 /********************* PRESCALERS	*********************/
 
+
 #define Divided_by_2		0u
 #define Divided_by_4		1u
 #define Divided_by_8		2u
@@ -198,6 +199,7 @@ typedef enum
 #define Divided_by_128		5u
 #define Divided_by_256		6u
 #define Divided_by_512		7u
+#define NOT_DIVIDED			8u
 
 /********************* PLL_MUL		*********************/
 
