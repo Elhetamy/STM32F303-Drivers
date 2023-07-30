@@ -1,8 +1,8 @@
-/*
- * DMA_reg.h
- *
- *  Created on: Jun 25, 2023
- *      Author: user
+/**
+ * @author Abdelrahman Elhetamy
+ * @file DMA_reg.h
+ * @brief Registers of DMA driver based on STM32F303RE(Cortex-M4)
+ * @date July 2023
  */
 
 #ifndef DMA_REG_H_
